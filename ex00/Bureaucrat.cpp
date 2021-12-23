@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:52 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/23 14:08:14 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/23 14:11:21 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,14 @@ Bureaucrat::Bureaucrat(const Bureaucrat &obj) : _name(), _grade()
 }
 
 Bureaucrat::Bureaucrat(const std::string &name) : _name(name), _grade(150)
+{
+}
+
+Bureaucrat::Bureaucrat(int grade) : _name("No one"), _grade(grade)
+{
+}
+
+Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
 }
 

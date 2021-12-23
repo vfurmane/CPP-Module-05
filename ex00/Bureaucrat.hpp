@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:32 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/23 14:07:49 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/23 14:09:58 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Bureaucrat
 		~Bureaucrat(void);
 		Bureaucrat(const Bureaucrat &obj);
 		Bureaucrat(const std::string &name);
+		Bureaucrat(int _grade);
+		Bureaucrat(const std::string &name, int _grade);
 
 		Bureaucrat	&operator=(const Bureaucrat &rhs);
 
