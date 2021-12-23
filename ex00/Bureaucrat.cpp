@@ -50,3 +50,13 @@ Bureaucrat	&Bureaucrat::operator=(const Bureaucrat &rhs)
 	this->_grade = rhs._grade;
 	return *this;
 }
+
+const std::string	&Bureaucrat::getName(void) const
+{
+	return this->_name;
+}
+
+int	Bureaucrat::getGrade(void) const
+{
+	return this->_grade;
+}

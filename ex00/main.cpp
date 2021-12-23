@@ -27,6 +27,9 @@ void	ft_trycatch(const std::string &name, int grade)
 
 int	main(void)
 {
+	Bureaucrat	micheal("Micheal Scott", 1);
+	std::cout << "The name is " << micheal.getName() << " and the grade is " << micheal.getGrade() << std::endl;
+
 	ft_trycatch("John Doe", 3);
 	ft_trycatch("God", 0);
 	ft_trycatch("Doggo", 151);
