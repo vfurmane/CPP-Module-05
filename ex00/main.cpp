@@ -13,11 +13,27 @@
 #include "Bureaucrat.hpp"
 #include <iostream>
 
-void	ft_trycatch(const std::string &name, int grade)
+void	ft_trycatch_alloc_bureaucrat(const std::string &name, int grade)
 {
 	try
 	{
 		Bureaucrat	bureaucrat(name, grade);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << e.what() << std::endl;
+	}
+}
+
+void	ft_trycatch_crement_bureaucrat(int grade, int crement)
+{
+	try
+	{
+		Bureaucrat	bureaucrat("M. Bureaucrat", grade);
+		if (crement == -1)
+			bureaucrat.decrement();
+		else if (crement == 1)
+			bureaucrat.increment();
 	}
 	catch (std::exception &e)
 	{
@@ -30,8 +46,15 @@ int	main(void)
 	Bureaucrat	micheal("Micheal Scott", 1);
 	std::cout << "The name is " << micheal.getName() << " and the grade is " << micheal.getGrade() << std::endl;
 
-	ft_trycatch("John Doe", 3);
-	ft_trycatch("God", 0);
-	ft_trycatch("Doggo", 151);
+	ft_trycatch_alloc_bureaucrat("John Doe", 3);
+	ft_trycatch_alloc_bureaucrat("God", 0);
+	ft_trycatch_alloc_bureaucrat("Doggo", 151);
+
+	std::cout << std::endl;
+
+	ft_trycatch_crement_bureaucrat(1, 1);
+	ft_trycatch_crement_bureaucrat(150, -1);
+	ft_trycatch_crement_bureaucrat(1, -1);
+	ft_trycatch_crement_bureaucrat(150, 1);
 	return 0;
 }
