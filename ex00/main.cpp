@@ -44,7 +44,7 @@ void	ft_trycatch_crement_bureaucrat(int grade, int crement)
 int	main(void)
 {
 	Bureaucrat	micheal("Micheal Scott", 1);
-	std::cout << "The name is " << micheal.getName() << " and the grade is " << micheal.getGrade() << std::endl;
+	std::cout << micheal << std::endl;
 
 	ft_trycatch_alloc_bureaucrat("John Doe", 3);
 	ft_trycatch_alloc_bureaucrat("God", 0);

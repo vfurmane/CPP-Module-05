@@ -13,6 +13,7 @@
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 
+# include <iostream>
 # include <string>
 
 class Bureaucrat
@@ -51,5 +52,7 @@ class Bureaucrat
 		const std::string	_name;
 		int					_grade;
 };
+
+std::ostream	&operator<<(std::ostream &os, const Bureaucrat &rhs);
 
 #endif

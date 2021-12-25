@@ -61,7 +61,6 @@ int	Bureaucrat::getGrade(void) const
 	return this->_grade;
 }
 
-#include <iostream>
 void	Bureaucrat::increment(void)
 {
 	if (this->_grade <= 1)
@@ -74,4 +73,10 @@ void	Bureaucrat::decrement(void)
 	if (this->_grade >= 150)
 		throw Bureaucrat::GradeTooLowException();
 	this->_grade++;
+}
+
+std::ostream	&operator<<(std::ostream &os, const Bureaucrat &rhs)
+{
+	os << rhs.getName() << ", bureaucrat grade " << rhs.getGrade();
+	return os;
 }
