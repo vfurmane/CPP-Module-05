@@ -6,13 +6,14 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:36:50 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 13:45:07 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/27 14:40:57 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FORM_HPP
 # define FORM_HPP
 
+# include <ostream>
 # include <string>
 
 class Form
@@ -41,11 +42,18 @@ class Form
 			}
 		};
 
+		const std::string	&getName(void) const;
+		const bool			&isSigned(void) const;
+		const int			&getMinGradeToSign(void) const;
+		const int			&getMinGradeToExec(void) const;
+
 	private:
 		const std::string	_name;
 		bool				_is_signed;
 		const int			_min_grade_to_sign;
 		const int			_min_grade_to_exec;
 };
+
+std::ostream	&operator<<(std::ostream &os, const Form &rhs);
 
 #endif

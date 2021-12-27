@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:37:33 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 13:44:50 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/27 14:45:42 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,4 +41,30 @@ Form	&Form::operator=(const Form &rhs)
 {
 	(void)rhs;
 	return *this;
+}
+
+const std::string	&Form::getName(void) const
+{
+	return this->_name;
+}
+
+const bool	&Form::isSigned(void) const
+{
+	return this->_is_signed;
+}
+
+const int	&Form::getMinGradeToSign(void) const
+{
+	return this->_min_grade_to_sign;
+}
+
+const int	&Form::getMinGradeToExec(void) const
+{
+	return this->_min_grade_to_exec;
+}
+
+std::ostream	&operator<<(std::ostream &os, const Form &rhs)
+{
+	os << rhs.getName() << ", form is " << (rhs.isSigned() ? "" : "not ") << "signed (sign: " << rhs.getMinGradeToSign() << ", exec: " << rhs.getMinGradeToExec() << ")";
+	return os;
 }
