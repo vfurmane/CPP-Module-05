@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:36:50 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:10:05 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/27 15:22:18 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <ostream>
 # include <string>
 # include "Bureaucrat.hpp"
+
+class Bureaucrat;
 
 class Form
 {

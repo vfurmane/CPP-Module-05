@@ -6,10 +6,11 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:12 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:09:19 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/27 15:41:51 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Bureaucrat.hpp"
 #include "Form.hpp"
 #include <iostream>
 
@@ -25,19 +26,12 @@ void	ft_trycatch_alloc_form(const std::string &name, int grade)
 	}
 }
 
-void	ft_trycatch_sign_form(int bureaucrat_grade, int min_grade)
+void	ft_sign_form(int bureaucrat_grade, int min_grade)
 {
-	try
-	{
-		Bureaucrat	bureaucrat("Bureaucrat", bureaucrat_grade);
-		Form		form("Form", min_grade, min_grade);
-		
-		form.beSigned(bureaucrat);
-	}
-	catch (std::exception &e)
-	{
-		std::cerr << e.what() << std::endl;
-	}
+	Bureaucrat	bureaucrat("Bureaucrat", bureaucrat_grade);
+	Form		form("Form", min_grade, min_grade);
+	
+	bureaucrat.signForm(form);
 }
 
 int	main(void)
@@ -53,8 +47,8 @@ int	main(void)
 	ft_trycatch_alloc_form("Form", 0);
 	ft_trycatch_alloc_form("Form", 151);
 
-	ft_trycatch_sign_form(1, 150);
-	ft_trycatch_sign_form(42, 42);
-	ft_trycatch_sign_form(150, 1);
+	ft_sign_form(1, 150);
+	ft_sign_form(42, 42);
+	ft_sign_form(150, 1);
 	return 0;
 }
