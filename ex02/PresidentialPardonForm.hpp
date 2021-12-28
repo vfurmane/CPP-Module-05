@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:54 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/28 11:01:05 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/28 11:12:16 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 
 class PresidentialPardonForm : public Form
 {
+	public:
+		PresidentialPardonForm(void);
+		~PresidentialPardonForm(void);
+		PresidentialPardonForm(const PresidentialPardonForm &obj);
+
+		PresidentialPardonForm	&operator=(const PresidentialPardonForm &rhs);
 };
 
 #endif
