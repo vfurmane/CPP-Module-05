@@ -6,19 +6,19 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:12 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:41:51 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:55:48 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "ShrubberyCreationForm.hpp"
 #include <iostream>
 
-void	ft_trycatch_alloc_form(const std::string &name, int grade)
+void	ft_trycatch_alloc_form(int grade)
 {
 	try
 	{
-		Form	form(name, grade, grade);
+		ShrubberyCreationForm	form("Form", grade, grade, "Target");
 	}
 	catch (std::exception &e)
 	{
@@ -28,8 +28,8 @@ void	ft_trycatch_alloc_form(const std::string &name, int grade)
 
 void	ft_sign_form(int bureaucrat_grade, int min_grade)
 {
-	Bureaucrat	bureaucrat("Bureaucrat", bureaucrat_grade);
-	Form		form("Form", min_grade, min_grade);
+	Bureaucrat				bureaucrat("Bureaucrat", bureaucrat_grade);
+	ShrubberyCreationForm	form("Form", min_grade, min_grade, "Target");
 	
 	bureaucrat.signForm(form);
 }
@@ -37,15 +37,15 @@ void	ft_sign_form(int bureaucrat_grade, int min_grade)
 int	main(void)
 {
 	Bureaucrat	micheal("Micheal Scott", 1);
-	Form	form("Paperwork", 21, 42);
+	ShrubberyCreationForm	form("Paperwork", 21, 42, "Office");
 	std::cout << form << std::endl;
 	form.beSigned(micheal);
 	std::cout << form << std::endl;
 
-	ft_trycatch_alloc_form("Form", 1);
-	ft_trycatch_alloc_form("Form", 150);
-	ft_trycatch_alloc_form("Form", 0);
-	ft_trycatch_alloc_form("Form", 151);
+	ft_trycatch_alloc_form(1);
+	ft_trycatch_alloc_form(150);
+	ft_trycatch_alloc_form(0);
+	ft_trycatch_alloc_form(151);
 
 	ft_sign_form(1, 150);
 	ft_sign_form(42, 42);

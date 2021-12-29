@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:37:33 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:05:09 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:23:53 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,13 @@ void	Form::beSigned(const Bureaucrat &bureaucrat)
 	if (bureaucrat.getGrade() > this->_min_grade_to_sign)
 		throw Form::GradeTooLowException();
 	this->_is_signed = true;
+}
+
+void	Form::execute(const Bureaucrat &executor) const
+{
+	if (executor.getGrade() > this->_min_grade_to_exec)
+		throw Form::GradeTooLowException();
+	this->_executeConcrete(executor);
 }
 
 std::ostream	&operator<<(std::ostream &os, const Form &rhs)

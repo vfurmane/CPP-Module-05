@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:48 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/28 20:25:12 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:56:23 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,14 @@ class RobotomyRequestForm : public Form
 		~RobotomyRequestForm(void);
 		RobotomyRequestForm(const RobotomyRequestForm &obj);
 		RobotomyRequestForm(const std::string &target);
+		RobotomyRequestForm(const std::string &name, const std::string &target);
+		RobotomyRequestForm(const std::string &name, int min_grade_to_sign, int min_grade_to_exec, const std::string &target);
 
 		RobotomyRequestForm	&operator=(const RobotomyRequestForm &rhs);
 
 	private:
 		const std::string	_target;
+		void				_executeConcrete(const Bureaucrat &executor) const;
 };
 
 #endif

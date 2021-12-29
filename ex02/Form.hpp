@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:36:50 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:22:18 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 09:30:39 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,14 @@ class Form
 		const int			&getMinGradeToSign(void) const;
 		const int			&getMinGradeToExec(void) const;
 		void				beSigned(const Bureaucrat &bureaucrat);
+		void				execute(const Bureaucrat &executor) const;
 
 	private:
 		const std::string	_name;
 		bool				_is_signed;
 		const int			_min_grade_to_sign;
 		const int			_min_grade_to_exec;
+		virtual void		_executeConcrete(const Bureaucrat &executor) const = 0;
 };
 
 std::ostream	&operator<<(std::ostream &os, const Form &rhs);
