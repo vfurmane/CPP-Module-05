@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:54 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:57:10 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 10:09:59 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ class PresidentialPardonForm : public Form
 
 	private:
 		const std::string	_target;
-		void				_executeConcrete(const Bureaucrat &executor) const;
+		void				_executeConcrete() const;
 };
 
 #endif

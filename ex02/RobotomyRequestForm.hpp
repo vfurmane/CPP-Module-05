@@ -6,13 +6,15 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:48 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:56:23 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:22:28 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ROBOTOMYREQUESTFORM_HPP
 # define ROBOTOMYREQUESTFORM_HPP
 
+# include <cstdlib>
+# include <time.h>
 # include "Form.hpp"
 
 class RobotomyRequestForm : public Form
@@ -29,7 +31,7 @@ class RobotomyRequestForm : public Form
 
 	private:
 		const std::string	_target;
-		void				_executeConcrete(const Bureaucrat &executor) const;
+		void				_executeConcrete() const;
 };
 
 #endif

@@ -6,12 +6,14 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:12 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:55:48 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:38:49 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 #include <iostream>
 
 void	ft_trycatch_alloc_form(int grade)
@@ -37,10 +39,28 @@ void	ft_sign_form(int bureaucrat_grade, int min_grade)
 int	main(void)
 {
 	Bureaucrat	micheal("Micheal Scott", 1);
-	ShrubberyCreationForm	form("Paperwork", 21, 42, "Office");
-	std::cout << form << std::endl;
-	form.beSigned(micheal);
-	std::cout << form << std::endl;
+
+	{
+		ShrubberyCreationForm	form("Paperwork", 21, 42, "Dwight");
+		std::cout << form << std::endl;
+		form.beSigned(micheal);
+		std::cout << form << std::endl;
+		form.execute(micheal);
+	}
+	{
+		RobotomyRequestForm	form("Paperwork", 21, 42, "Dwight");
+		std::cout << form << std::endl;
+		form.beSigned(micheal);
+		std::cout << form << std::endl;
+		form.execute(micheal);
+	}
+	{
+		PresidentialPardonForm form("Paperwork", 21, 42, "Dwight");
+		std::cout << form << std::endl;
+		form.beSigned(micheal);
+		std::cout << form << std::endl;
+		form.execute(micheal);
+	}
 
 	ft_trycatch_alloc_form(1);
 	ft_trycatch_alloc_form(150);

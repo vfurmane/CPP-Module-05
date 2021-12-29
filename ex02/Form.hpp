@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:36:50 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:30:39 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 10:50:09 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,13 @@ class Form
 				return "The grade is too high";
 			}
 		};
+		class NotSigned : public std::exception
+		{
+			virtual const char *what() const throw()
+			{
+				return "The form was not signed";
+			}
+		};
 
 		const std::string	&getName(void) const;
 		const bool			&isSigned(void) const;
@@ -57,7 +64,7 @@ class Form
 		bool				_is_signed;
 		const int			_min_grade_to_sign;
 		const int			_min_grade_to_exec;
-		virtual void		_executeConcrete(const Bureaucrat &executor) const = 0;
+		virtual void		_executeConcrete(void) const = 0;
 };
 
 std::ostream	&operator<<(std::ostream &os, const Form &rhs);

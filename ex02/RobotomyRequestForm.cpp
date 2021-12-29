@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:28 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:58:35 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:36:15 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,12 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 	return *this;
 }
 
-void	RobotomyRequestForm::_executeConcrete(const Bureaucrat &executor) const
+void	RobotomyRequestForm::_executeConcrete() const
 {
-	(void)executor; /* ===== DELETE ===== */
+	srand(time(NULL));
+	std::cout << "* drilling noises *" << std::endl;
+	if (rand() % 2)
+		std::cout << this->_target << " was successfully robotomized !" << std::endl;
+	else
+		std::cerr << "Well, " << this->_target << "'s robotomy was a failure..." << std::endl;
 }

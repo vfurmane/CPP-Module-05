@@ -6,13 +6,14 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:43 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:36:58 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 10:40:03 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SHRUBBERYCREATIONFORM_HPP
 # define SHRUBBERYCREATIONFORM_HPP
 
+# include <fstream>
 # include "Form.hpp"
 
 class ShrubberyCreationForm : public Form
@@ -29,7 +30,7 @@ class ShrubberyCreationForm : public Form
 
 	private:
 		const std::string	_target;
-		void				_executeConcrete(const Bureaucrat &executor) const;
+		void				_executeConcrete(void) const;
 };
 
 #endif

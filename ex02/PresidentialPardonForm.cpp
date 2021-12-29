@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:32 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 09:59:00 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:39:27 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &name, int min_
 {
 }
 
-void	PresidentialPardonForm::_executeConcrete(const Bureaucrat &executor) const
+void	PresidentialPardonForm::_executeConcrete() const
 {
-	(void)executor; /* ===== DELETE ===== */
+	std::cout << this->_target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 }
