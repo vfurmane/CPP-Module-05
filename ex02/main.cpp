@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:12 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 11:38:49 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:58:30 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,16 @@ void	ft_sign_form(int bureaucrat_grade, int min_grade)
 	ShrubberyCreationForm	form("Form", min_grade, min_grade, "Target");
 	
 	bureaucrat.signForm(form);
+}
+
+void	ft_exec_form(bool sign, int bureaucrat_grade)
+{
+	Bureaucrat				bureaucrat("Bureaucrat", bureaucrat_grade);
+	ShrubberyCreationForm	form("Form", 150, 42, "Target");
+	
+	if (sign)
+		bureaucrat.signForm(form);
+	bureaucrat.executeForm(form);
 }
 
 int	main(void)
@@ -70,5 +80,9 @@ int	main(void)
 	ft_sign_form(1, 150);
 	ft_sign_form(42, 42);
 	ft_sign_form(150, 1);
+
+	ft_exec_form(false, 1);
+	ft_exec_form(true, 150);
+	ft_exec_form(true, 1);
 	return 0;
 }

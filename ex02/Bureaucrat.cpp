@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:52 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:41:58 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:57:35 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,6 +86,19 @@ void	Bureaucrat::signForm(Form &form) const
 		std::cerr << *this << " cannot sign " << form << " because " << e.what() << std::endl;
 	}
 	std::cout << *this << " signs " << form << std::endl;
+}
+
+void	Bureaucrat::executeForm(Form &form) const
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch (std::exception &e)
+	{
+		std::cerr << *this << " cannot execute " << form << " because " << e.what() << std::endl;
+	}
+	std::cout << *this << " executes " << form << std::endl;
 }
 
 std::ostream	&operator<<(std::ostream &os, const Bureaucrat &rhs)

@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/23 13:59:32 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/27 15:36:34 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/29 11:57:58 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ class Bureaucrat
 		void				increment(void);
 		void				decrement(void);
 		void				signForm(Form &form) const;
+		void				executeForm(Form &form) const;
 
 	private:
 		const std::string	_name;
