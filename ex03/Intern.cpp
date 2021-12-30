@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/30 14:04:59 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/30 14:55:37 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/30 16:30:55 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,11 @@ Intern	&Intern::operator=(const Intern &rhs)
 {
 	(void)rhs; /* ===== DELETE ===== */
 	return *this;
+}
+
+Form	*Intern::makeForm(const std::string &form_name, const std::string &form_target) const
+{
+	(void)form_name; /* ===== DELETE ===== */
+	(void)form_target; /* ===== DELETE ===== */
+	return NULL;
 }
