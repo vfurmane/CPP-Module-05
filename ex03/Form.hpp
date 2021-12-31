@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/27 11:36:50 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 10:50:09 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/31 15:45:49 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Form
 {
 	public:
 		Form(void);
-		~Form(void);
+		virtual ~Form(void);
 		Form(const Form &obj);
 		Form(const std::string &name);
 		Form(const std::string &name, int min_grade_to_sign, int min_grade_to_exec);

@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:57:59 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 10:41:20 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/31 15:44:28 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationF
 {
 	(void)rhs;
 	return *this;
+}
+
+Form	*ShrubberyCreationForm::build(const std::string &target)
+{
+	return new ShrubberyCreationForm("shrubbery creation", target);
 }
 
 void	ShrubberyCreationForm::_executeConcrete(void) const

@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:32 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 11:39:27 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/31 15:44:52 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string &name, const st
 
 PresidentialPardonForm::PresidentialPardonForm(const std::string &name, int min_grade_to_sign, int min_grade_to_exec, const std::string &target) : Form(name, min_grade_to_sign, min_grade_to_exec), _target(target)
 {
+}
+
+Form	*PresidentialPardonForm::build(const std::string &target)
+{
+	return new PresidentialPardonForm("presidential pardon", target);
 }
 
 void	PresidentialPardonForm::_executeConcrete() const

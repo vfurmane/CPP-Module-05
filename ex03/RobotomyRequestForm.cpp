@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:28 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 11:36:15 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/31 15:45:02 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,11 @@ RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &r
 {
 	(void)rhs;
 	return *this;
+}
+
+Form	*RobotomyRequestForm::build(const std::string &target)
+{
+	return new RobotomyRequestForm("robotomy request", target);
 }
 
 void	RobotomyRequestForm::_executeConcrete() const

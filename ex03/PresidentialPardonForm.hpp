@@ -6,7 +6,7 @@
 /*   By: vfurmane <vfurmane@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/28 10:58:54 by vfurmane          #+#    #+#             */
-/*   Updated: 2021/12/29 10:09:59 by vfurmane         ###   ########.fr       */
+/*   Updated: 2021/12/31 14:22:53 by vfurmane         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ class PresidentialPardonForm : public Form
 		PresidentialPardonForm(const std::string &name, int min_grade_to_sign, int min_grade_to_exec, const std::string &target);
 
 		PresidentialPardonForm	&operator=(const PresidentialPardonForm &rhs);
+
+		static Form	*build(const std::string &target);
 
 	private:
 		const std::string	_target;
